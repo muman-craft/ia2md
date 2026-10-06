@@ -1,0 +1,11 @@
+# Ignore generated files
+ia2md-rapport.md
+ia2md.lnk
+
+# Ignore personnal folder
+.Archive/
+
+# Ignorer Python cache folder 
+.vscode/
+__pycache__/
+*.pyc

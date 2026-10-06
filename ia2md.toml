@@ -1,0 +1,45 @@
+# ia2md.toml — Définitions du superviseur des exports d'IA
+#
+# Chemins de chaque IA, déduits des racines :
+#   téléchargements : <downloads>\<download>   (par défaut : <download> = nom de l'IA)
+#   code            : <code>\<nom>\<lecteur>.py (par défaut : lecteur = nom en minuscules + "2md")
+#   sortie          : <exports>\<nom>\<sortie>
+# Libellé de l'IA dans les tours : par défaut, son nom.
+
+[racines]
+downloads = 'C:\Users\Mathieu\Données\Archives\Downloads IA'
+code      = 'C:\Users\Mathieu\Données\Développement\Python\Exports IA'
+exports   = 'C:\Users\Mathieu\Données\Exports\IA'
+arrivee   = ""
+
+[general]
+utilisateur = "Mumen"
+sortie      = ""
+
+# source : nom ou motif du fichier cherché dans le téléchargement le plus récent
+# (dans le zip, ou tel quel si le téléchargement est le fichier lui-même).
+
+[ia.ChatGPT]
+source = "conversations-[0-9][0-9][0-9].json"     # le manifest désigne les fichiers conversations-NNN.json
+
+[ia.Claude]
+source = "conversations.json"
+
+[ia.DeepSeek]
+source = "conversations.json"
+
+[ia.Gemini]
+download = "GoogleTakeout"     # téléchargement Takeout partagé avec GoogleAI
+source   = "MonActivité.json"
+entete   = "Applications Gemini"    # comparé espaces normalisés (Google écrit une espace insécable)
+
+[ia.GoogleAI]
+download = "GoogleTakeout"
+source   = "MonActivité.json"
+entete   = "Mode IA"
+
+[ia.Grok]
+source = "prod-grok-backend.json"
+
+[ia.Perplexity]
+source = "conversations-*.json"     # nom horodaté : motif
